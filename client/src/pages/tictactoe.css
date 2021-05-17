@@ -1,0 +1,137 @@
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  text-align: center;
+  justifyItems: center;
+}
+
+ol, ul {
+  padding-left: 30px;
+}
+
+html {
+  overflow-x: hidden
+}
+
+.game-board {
+  top: 200px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.top-bar {
+  animation: fadeIn ease 0.5s;
+  position: sticky;
+  background: #ffffff;
+  border: 3px solid #000000;
+  position: "absolute";
+  top: 3px;
+  transition-duration: 1s;
+}
+
+.game-body {
+  list-style-type: none;
+  padding: 0;
+  margin: auto;
+  overflow: hidden;
+  top: 200px;
+}
+
+
+.navigation {
+  animation: fadeIn ease 1s;
+  list-style-type: none;
+  background: #333333;
+  padding: 0;
+  margin: auto;
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+.navigation-item {
+  width: 10%;
+  display: inline-block;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  transition-duration: 0.4s;
+}
+
+.navigation-item:hover {
+  background: #222222;
+  transition-duration: 0.4s;
+}
+
+.square {
+  float: left;
+  background: #fff;
+  border: 1px solid #999;
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 74px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 74px;
+}
+
+.explain {
+  overflow: hidden;
+  animation: explainSwipeIn ease 1s;
+  list-style-type: none;
+  margin-top: 20;
+  float: right;
+  border: 3px solid #000000;
+  font-size: 16px;
+  right: 35px;
+  width: 20%;
+  top: 110px;
+  position: absolute;
+  text-align: left;
+  padding: 10px;
+}
+
+.explain-box {
+  transition: opacity ease-in-out 0.3s;
+}
+
+.explain-box:hover {
+  opacity: 0;
+}
+
+@keyframes explainSwipeIn {
+  from {right: -350px;}
+  to {right: 35px;}
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game-info {
+  margin: auto;
+}
