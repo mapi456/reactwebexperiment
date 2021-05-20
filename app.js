@@ -22,10 +22,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'client', 'build')));
 
-app.use('/users', usersRouter);
-app.use("/testAPI", testAPIRouter);
-app.use('/stories', storiesRouter);
+app.use('/api/users', usersRouter);
+app.use("/api/testAPI", testAPIRouter);
+app.use('/api/stories', storiesRouter);
+
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/client/build/index.html'));
+});
 
 // error handler
 app.use(function(err, req, res, next) {
@@ -36,10 +41,6 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
 
