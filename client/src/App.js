@@ -1,7 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import {
-    HashRouter as Router,
+    BrowserRouter as Router,
     Switch,
     Route,
     Link,
